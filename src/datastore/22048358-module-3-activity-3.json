@@ -1,0 +1,116 @@
+{
+    "firstName": "Tuan Chi",
+    "lastName": "Ly",
+    "studentId": "22048358",
+    "courseCode": "1837",
+    "courseName": "Bachelor Cyber Security and Behaviour",
+    "semestersTaken": [
+        {
+            "semester": "AUT23",
+            "subjects": [
+                {
+                    "subjectCode": "BEHV1026",
+                    "subjectName": "Cyber Behaviour"
+                },
+                {
+                    "subjectCode": "HUMN1064",
+                    "subjectName": "Digital Identities"
+                },
+                {
+                    "subjectCode": "COMP1005",
+                    "subjectName": "Programming Fundamentals"
+                },
+                {
+                    "subjectCode": "INFS1002",
+                    "subjectName": "Information Systems in Context"
+                }
+            ] 
+        },
+        {
+            "semester": "SPR23",
+            "subjects": [
+                {
+                    "subjectCode": "COMP2004",
+                    "subjectName": "Computer Networking"
+                },
+                {
+                    "subjectCode": "INFO2004",
+                    "subjectName": "Cyber Crime and Social Engineering"
+                },
+                {
+                    "subjectCode": "COMP2015",
+                    "subjectName": "Programming Techniques"
+                },
+                {
+                    "subjectCode": "BEHV1025",
+                    "subjectName": "Usable Desgin"
+                }
+            ] 
+        },
+        {
+            "semester": "AUT24",
+            "subjects": [
+                {
+                    "subjectCode": "COMP1013",
+                    "subjectName": "Analystics Programming"
+                },
+                {
+                    "subjectCode": "MATH2006",
+                    "subjectName": "Experimental Design and Analysis"
+                },
+                {
+                    "subjectCode": "COMP2020",
+                    "subjectName": "Technologies for Web Applications"
+                },
+                {
+                    "subjectCode": "INFO2006",
+                    "subjectName": "Usable Security"
+                }
+            ] 
+        },
+        {
+            "semester": "SPR24",
+            "subjects": [
+                {
+                    "subjectCode": "COMP2027",
+                    "subjectName": "Cyber Security"
+                },
+                {
+                    "subjectCode": "INFO2008",
+                    "subjectName": "Cyber Incident Response and Risk Management"
+                },
+                {
+                    "subjectCode": "BEHV3018",
+                    "subjectName": "Psychology and the Online World"
+                },
+                {
+                    "subjectCode": "INFO3015",
+                    "subjectName": "Internet of Things and Smart Environments"
+                }
+            ] 
+        },
+        {
+            "semester": "1H25",
+            "subjects": [
+                {
+                    "subjectCode": "INFO3016",
+                    "subjectName": "Cyber Security and Behaviour Community Placement"
+                }
+            ] 
+        },
+        {
+            "semester": "AUT25",
+            "subjects": [
+                {
+                    "subjectCode": "INFO3014",
+                    "subjectName": "Digital Investigation and Forensics"
+                },
+                {
+                    "subjectCode": "INFO3002",
+                    "subjectName": "Ethical Hacking Principles and Practices"
+                }
+            ] 
+        }
+    ]
+    
+}

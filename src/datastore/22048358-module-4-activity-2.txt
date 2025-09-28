@@ -1,0 +1,4 @@
+Block mined:
+sha256: 00000469065c77c28ecbebe026fcdfc1d98163a7afe7bd5a1e8fdae831c5371a
+nonce: 125040
+difficulty: 4

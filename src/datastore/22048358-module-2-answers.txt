@@ -1,0 +1,7 @@
+Explain the basic principles of public key encryption. How does it differ from symmetric key cryptography?
+Public key encryption, or asymmetric cryptography, uses two separate keys: a public key for encryption and a private key for decryption. The public key is openly shared, while the private key is kept secret by the owner. This system ensures that anyone can encrypt a message using the recipient’s public key, but only the recipient can decrypt it using their private key. Symmetric key cryptography uses the same key for both encryption and decryption, which means both parties must securely share and manage the same secret key. The key difference lies in how keys are used and shared. Public key encryption solves the problem of secure key distribution, but is generally slower than symmetric methods. In practice, systems often combine both: public key encryption to exchange a symmetric key, which is then used for efficient data encryption.
+
+List three real-world applications of public key cryptography/encryption
+- SSL/TLS (HTTPS): Used to secure communication between web browsers and servers.
+- Email Encryption (e.g., PGP): Ensures confidentiality and authenticity of email content.
+- Digital Signatures: Used to verify the integrity and origin of software or digital documents.
