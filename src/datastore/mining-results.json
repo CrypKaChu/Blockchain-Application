@@ -1,0 +1,230 @@
+{
+  "metadata": {
+    "totalBlocks": 9,
+    "generatedAt": "2025-09-30T07:33:02.779Z",
+    "difficulty": 4
+  },
+  "miningResults": [
+    {
+      "blockNumber": 0,
+      "hash": "00004c449e71644fb4bdb9aa455cc2249f9a43e9d92847a1cf85a49727a1cbbb",
+      "nonce": 53309,
+      "difficulty": 4,
+      "timeTaken": 0.08,
+      "startTime": "09/30/2025, 02:10:32 AM",
+      "endTime": "02:10:32 AM",
+      "timestamp": 1759198232123,
+      "transactions": [
+        {
+          "hash": "8e9b1ac33b71b21a17429a9b79c668fe9479fac1f8c23c157dc1f55b0c925510",
+          "data": {
+            "file1": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process.",
+            "file2": "",
+            "timestamp": 1759198232122,
+            "inputFiles": {
+              "file1": "src/testfile.txt",
+              "file2": "src/test2file.json",
+              "privateKey": "src/keys/22048358-private.key"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "blockNumber": 1,
+      "hash": "00002e134955a2c3bde90fa705f5ba0bdab808c276587252beeb31c627d1995f",
+      "nonce": 8958,
+      "difficulty": 4,
+      "timeTaken": 0.02,
+      "startTime": "09/30/2025, 02:16:49 AM",
+      "endTime": "02:16:49 AM",
+      "timestamp": 1759198609166,
+      "transactions": [
+        {
+          "hash": "552df2a215b9e3ec9709c54c698488daf757e098225a6e9c2c7c691f7cf9c3c6",
+          "data": {
+            "file1": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process.",
+            "file2": "",
+            "timestamp": 1759198609165,
+            "inputFiles": {
+              "file1": "src/testfile.txt",
+              "file2": "src/test2file.json",
+              "privateKey": "src/keys/22048358-private.key"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "blockNumber": 2,
+      "hash": "0000a8f0925fb5e922850c9824ab2c0a73184fc7f2df9ac9c2b1d04da7ebf4d2",
+      "nonce": 110639,
+      "difficulty": 4,
+      "timeTaken": 0.17,
+      "startTime": "09/30/2025, 07:13:18 AM",
+      "endTime": "07:13:18 AM",
+      "timestamp": 1759216398638,
+      "transactions": [
+        {
+          "hash": "cfb28ef5e9170c8f6605003f8b9cfe4324ef828f4a50df5a7079c4f0527653ba",
+          "data": {
+            "file1": "src/testfile.txt",
+            "file2": "src/test2file.json",
+            "timestamp": 1759216398637,
+            "inputFiles": {
+              "privateKey": "src/keys/22048358-private.key"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "blockNumber": 3,
+      "hash": "0000825f4bf30c3434a9b924ab91e188136091d3b690bd38f5c83ea4c4d5a470",
+      "nonce": 16066,
+      "difficulty": 4,
+      "timeTaken": 0.03,
+      "startTime": "09/30/2025, 07:13:58 AM",
+      "endTime": "07:13:58 AM",
+      "timestamp": 1759216438613,
+      "transactions": [
+        {
+          "hash": "6c370c483bddc0c2e8cd4c6e4f44218be54cf8397b04be6919f60a5ae7a1b91e",
+          "data": {
+            "file1": "src/testfile.txt",
+            "file2": "src/test2file.json",
+            "timestamp": 1759216438612,
+            "inputFiles": {
+              "privateKey": "src/keys/22048358-private.key"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "blockNumber": 4,
+      "hash": "0000cdb1d2a3ff560c48948dbef9a6cd126c0275f3e1a863ceb8776da7c763b4",
+      "nonce": 296807,
+      "difficulty": 4,
+      "timeTaken": 0.34,
+      "startTime": "09/30/2025, 07:20:14 AM",
+      "endTime": "07:20:14 AM",
+      "timestamp": 1759216814595,
+      "transactions": [
+        {
+          "hash": "09ff7d1f105861972c805ec9f04e6afb24409388619a559711988b4d17dce03b",
+          "data": {
+            "file1": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process.",
+            "file2": "",
+            "timestamp": 1759216814595,
+            "inputFiles": {
+              "file1": "src/testfile.txt",
+              "file2": "src/test2file.json",
+              "privateKey": "src/keys/22048358-private.key"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "blockNumber": 5,
+      "hash": "0000354ad7daec43ada73f0f39280507cd4711a486bb725af7dbbd9d60eebb1f",
+      "nonce": 56475,
+      "difficulty": 4,
+      "timeTaken": 0.08,
+      "startTime": "09/30/2025, 07:21:14 AM",
+      "endTime": "07:21:14 AM",
+      "timestamp": 1759216874496,
+      "transactions": [
+        {
+          "hash": "bb2f874728b59a92ad138ef9778c8f829f5abe059201364c7c2accc2dc4664f4",
+          "data": {
+            "file1": "src/testfile.txt",
+            "file2": "src/test2file.json",
+            "timestamp": 1759216874495,
+            "inputFiles": {
+              "file1": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process.",
+              "file2": "",
+              "privateKey": "src/keys/22048358-private.key"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "blockNumber": 6,
+      "hash": "0000a171df81b75a287d2fa84dd538d056cf0ed6f841ac31be411efebaaa2db5",
+      "nonce": 12965,
+      "difficulty": 4,
+      "timeTaken": 0.04,
+      "startTime": "09/30/2025, 07:25:59 AM",
+      "endTime": "07:25:59 AM",
+      "timestamp": 1759217159690,
+      "transactions": [
+        {
+          "hash": "d51abb9fd49bb82312abb336f80e3e18d0f6a0eda07f17d74505f9ffddea3430",
+          "data": {
+            "file1": "testfile.txt",
+            "file2": "test2file.json",
+            "timestamp": 1759217159689,
+            "inputFiles": {
+              "file1": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process.",
+              "file2": "",
+              "privateKey": "src/keys/22048358-private.key"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "blockNumber": 0,
+      "hash": "0000f081980f5aa7a1dd0234e5282f2be1c807fea14a36cad02bf9dce4ede595",
+      "nonce": 92796,
+      "difficulty": 4,
+      "timeTaken": 0.11,
+      "startTime": "09/30/2025, 07:26:16 AM",
+      "endTime": "07:26:16 AM",
+      "timestamp": 1759217176664,
+      "transactions": [
+        {
+          "hash": "fb1d4e45b7c7225de581686cedff0670c8ecd9aa0e2e048348f44592be9e0400",
+          "data": {
+            "file1": "testfile.txt",
+            "file2": "test2file.json",
+            "timestamp": 1759217176663,
+            "inputFiles": {
+              "file1": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process.",
+              "file2": "",
+              "privateKey": "src/keys/22048358-private.key"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "blockNumber": 0,
+      "hash": "0000b9c73bbafbec5b257208272ecf76c79806061a6b722a1d2e727fe78c57ff",
+      "nonce": 93026,
+      "difficulty": 4,
+      "timeTaken": 0.12,
+      "startTime": "09/30/2025, 07:33:02 AM",
+      "endTime": "07:33:02 AM",
+      "timestamp": 1759217582644,
+      "transactions": [
+        {
+          "hash": "26591e24432efdd65f77709b304f647710552e8ec98c6d7a80efb94f183c69e2",
+          "data": {
+            "file1Name": "testfile.txt",
+            "file2Name": "test2file.json",
+            "timestamp": 1759217582643,
+            "inputFiles": {
+              "file1": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process.",
+              "file2": "",
+              "privateKey": "src/keys/22048358-private.key"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

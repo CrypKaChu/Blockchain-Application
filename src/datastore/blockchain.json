@@ -1,0 +1,28 @@
+{
+  "blocks": [
+    {
+      "blockNumber": 0,
+      "timestamp": 1759217582644,
+      "previousHash": "0",
+      "transactions": [
+        {
+          "hash": "26591e24432efdd65f77709b304f647710552e8ec98c6d7a80efb94f183c69e2",
+          "data": {
+            "file1Name": "testfile.txt",
+            "file2Name": "test2file.json",
+            "timestamp": 1759217582643,
+            "inputFiles": {
+              "file1": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process.",
+              "file2": "",
+              "privateKey": "src/keys/22048358-private.key"
+            }
+          }
+        }
+      ],
+      "nonce": 93026,
+      "hash": "0000b9c73bbafbec5b257208272ecf76c79806061a6b722a1d2e727fe78c57ff"
+    }
+  ],
+  "difficulty": 4,
+  "lastUpdated": "2025-09-30T07:33:02.778Z"
+}

@@ -6,62 +6,85 @@ export default class Block {
     this.blockNumber = blockNumber;
     this.timestamp = Date.now();
     this.previousHash = previousHash;
-    this.transactions = transactions; // Array to hold Transaction objects
-    this.nonce = 0; // A number used for mining
-    this.hash = ""; // The block's cryptographic hash
+    this.transactions = transactions;
+    this.nonce = 0;
+    this.hash = "";
   }
 
   calculateHash() {
-    const dataToHash = this.blockNumber.toString() +
+    const transactionsString = JSON.stringify(this.transactions.map(tx => tx.hash));
+    
+    const dataToHash = (
+      this.blockNumber.toString() +
+      this.timestamp + // Include the fixed timestamp
       this.previousHash +
-      JSON.stringify(this.transactions)
-      + this.nonce.toString();
+      transactionsString +
+      this.nonce.toString()
+    );
+  
     return crypto.createHash("sha256").update(dataToHash).digest("hex");
   }
 
   mineBlock(difficulty) {
-    console.log(`Mining block ${this.blockNumber} with difficulty ${difficulty}...`);
-    const startTime = Date.now();
-
-
     let nonce = 0;
-    let attempts = 0;
     const target = '0'.repeat(difficulty);
+    const startTime = new Date();
 
     while (true) {
       this.nonce = nonce;
       const hash = this.calculateHash();
 
       if (hash.startsWith(target)) {
-        this.hash = hash;
-        const endTime = Date.now();
-        const miningTime = (endTime - startTime) / 1000;
+        const endTime = new Date();
+        const timeTaken = (endTime.getTime() - startTime.getTime()) / 1000;
 
-        console.log(`✅ Block ${this.blockNumber} mined successfully!`);
-        console.log(`🔗 Hash: ${hash}`);
-        console.log(`🔢 Nonce: ${nonce}`);
-        console.log(`⏱️  Mining time: ${miningTime.toFixed(2)} seconds`);
-        console.log(`🎯 Difficulty: ${difficulty} (${target})`);
-        console.log(`📊 Attempts: ${attempts.toLocaleString()}`);
-        console.log(`⚡ Hash rate: ${(attempts / miningTime).toFixed(2)} hashes/sec\n`);
+        // Format the time strings
+        const startTimeStr = startTime.toLocaleString('en-US', {
+          month: '2-digit',
+          day: '2-digit',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        });
 
-        return {
+        const endTimeStr = endTime.toLocaleString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        });
+
+        // Create mining result object
+        const miningResult = {
+          blockNumber: this.blockNumber,
           hash,
           nonce,
           difficulty,
-          miningTime,
-          attempts,
-          hashRate: attempts / miningTime
+          timeTaken: parseFloat(timeTaken.toFixed(2)),
+          startTime: startTimeStr,
+          endTime: endTimeStr,
+          timestamp: startTime.getTime(),
+          transactions: this.transactions
         };
+
+        // Update block properties
+        this.hash = hash;
+        this.nonce = nonce;
+
+        // Output
+        console.log('#'.repeat(50));
+        console.log(`Block ${this.blockNumber} Mined`);
+        console.log(`Proof of work: ${hash} at nonce ${nonce}`);
+        console.log(`Time taken: ${timeTaken.toFixed(2)} seconds, starting at ${startTimeStr}, ending at ${endTimeStr}`);
+        console.log(`Difficulty: ${difficulty}`);
+        console.log('#'.repeat(50));
+
+        return miningResult;
       }
 
       nonce++;
-      attempts++;
-
-      // Optional: Add progress indicator for long mining operations
-      if (attempts % 100000 === 0) {
-        console.log(`Mining progress: ${attempts.toLocaleString()} attempts...`);
-      }
     }
   }
 
