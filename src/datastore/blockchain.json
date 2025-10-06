@@ -2,27 +2,74 @@
   "blocks": [
     {
       "blockNumber": 0,
-      "timestamp": 1759217582644,
+      "timestamp": 1759559704603,
       "previousHash": "0",
+      "transactions": [],
+      "nonce": 32161,
+      "hash": "0000cdc62290d22d82ceec1ee9d7081d855da2a7b3e4b0977f77579935b4f063"
+    },
+    {
+      "blockNumber": 1,
+      "timestamp": 1759559704658,
+      "previousHash": "0000cdc62290d22d82ceec1ee9d7081d855da2a7b3e4b0977f77579935b4f063",
       "transactions": [
         {
-          "hash": "26591e24432efdd65f77709b304f647710552e8ec98c6d7a80efb94f183c69e2",
-          "data": {
-            "file1Name": "testfile.txt",
-            "file2Name": "test2file.json",
-            "timestamp": 1759217582643,
-            "inputFiles": {
-              "file1": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process.",
-              "file2": "",
-              "privateKey": "src/keys/22048358-private.key"
+          "inputs": [
+            {
+              "from_hash": "Alice",
+              "value_sent": 0,
+              "file_data": {
+                "filename": "testfile.txt",
+                "file_hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+                "content": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process."
+              }
             }
-          }
+          ],
+          "outputs": [
+            {
+              "to_hash": "Bob",
+              "value_received": 0,
+              "file_data": {
+                "filename": "testfile.txt",
+                "file_hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c"
+              }
+            }
+          ],
+          "timestamp": 1759559704600,
+          "signature": "VC9mJKltmYcheZIiGMbspJ5kR4DCv7xLqYbV/WsVGdvwBrPX8bp32etSnXCn4Dn2SinaCKmaYclhbUfmpRg/JxaLgAswzUBfkh5vpvjBAKTn4GeoOoSLPHXWYYh6FGbjPGNMCuGauHbBw4pyh6Cjz9RhIWovNoTjdyKRSXwAWaxkgVs69o4UUXc9pNZf9qoa+NN9iGoEWCNtKHzIM0FVc70frMgEZhhsoSsLJfIafqV0I9j6LLWuCD/VFTMg8ZtW03L8TV+wq+MeWDZQdKDH6fGUM1Yi/x3r1FetWbzFf2fUqh98qy3xpKRWRwIwzzQksVbz90wErUfvpvFN6yZ8gQ==",
+          "transaction_hash": "72d73ea4c072b1fcb78f4aac468be87a166119460c8f5da6b991f2f2291304e7"
+        },
+        {
+          "inputs": [
+            {
+              "from_hash": "Alice",
+              "value_sent": 0,
+              "file_data": {
+                "filename": "test2file.json",
+                "file_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "content": ""
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "to_hash": "Bob",
+              "value_received": 0,
+              "file_data": {
+                "filename": "test2file.json",
+                "file_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          ],
+          "timestamp": 1759559704603,
+          "signature": "ZQi/P4GS5YVS6hi9HWsG3E55EqPlnG7rn6BFE8bXiOU3Tk2RkyJRuLOdyNzKMYQVCuqUKtoLpsE0nwRWmTCofv1e6PFlQEdJdsmIO0B+F+CcsPkAlM0Yyt7MCVA4135+n9XlTdBK8pldHJJj0hX3LjwS0R4+3dLj+d1BkhBKQsC3ZMoGK+FGYC7+cYMxEBadnlhn4urGzfJXKjSt3Cvqw04KGsOaXCfubi4bYu34ZBHR+J/T8S2hQZSY8XF6LdqcNuaU9V3WR4P2tzF6vGTK2L0c0S0ZCBub0hZOtk8W/2RRs6BEOBEkRhe7Om9GXKFO8FWq54nG6Nbs682Pk3LRHA==",
+          "transaction_hash": "7185691901ebf82a066c508dca4bea65ac64e2606a561c4d2480eeba5e1009cc"
         }
       ],
-      "nonce": 93026,
-      "hash": "0000b9c73bbafbec5b257208272ecf76c79806061a6b722a1d2e727fe78c57ff"
+      "nonce": 50812,
+      "hash": "000066effe0eb493661cf4d2d2b96e3455dcdda0cbd3c993d6cf60b204ff3dbb"
     }
   ],
   "difficulty": 4,
-  "lastUpdated": "2025-09-30T07:33:02.778Z"
+  "lastUpdated": "2025-10-04T06:35:04.714Z"
 }

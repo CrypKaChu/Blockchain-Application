@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "totalBlocks": 9,
-    "generatedAt": "2025-09-30T07:33:02.779Z",
+    "totalBlocks": 19,
+    "generatedAt": "2025-10-04T06:35:04.714Z",
     "difficulty": 4
   },
   "miningResults": [
@@ -223,6 +223,396 @@
               "privateKey": "src/keys/22048358-private.key"
             }
           }
+        }
+      ]
+    },
+    {
+      "blockNumber": 1,
+      "hash": "0000bd45c10c0a1380217c2d20a0f7e68b47f05eac9699e51bb8ac6edf6353c7",
+      "nonce": 50503,
+      "difficulty": 4,
+      "timeTaken": 0.06,
+      "startTime": "10/01/2025, 02:14:29 AM",
+      "endTime": "02:14:29 AM",
+      "timestamp": 1759284869259,
+      "transactions": [
+        {
+          "from": {
+            "filename": "testfile.txt",
+            "hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+            "signature": ""
+          },
+          "timestamp": 1759284869259,
+          "signature": ""
+        },
+        {
+          "from": {
+            "filename": "test2file.json",
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "signature": ""
+          },
+          "timestamp": 1759284869259,
+          "signature": ""
+        }
+      ]
+    },
+    {
+      "blockNumber": 0,
+      "hash": "00003cf9531bb43c8871660237726bd74f862b917fb496987d7e337d73ed71f1",
+      "nonce": 43864,
+      "difficulty": 4,
+      "timeTaken": 0.06,
+      "startTime": "10/01/2025, 02:37:30 AM",
+      "endTime": "02:37:30 AM",
+      "timestamp": 1759286250074,
+      "transactions": [
+        {
+          "filename": "testfile.txt",
+          "fileHash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+          "publicKey": "Alice",
+          "timestamp": 1759286250072,
+          "signature": "YJS6N8n9oogdOKlywturfs3adOsafoGr8o69uVskLXCtTcFLO5wl2usiLFHrntc19WuiON+EYrB91TcgO5swu5Z7No1mIyd+cTNxdm5zcUzm1mNCzfB4Re+ZA5zNMfJvUa1sDoixx6SRhnBvxNjKGfgYPkszTZH9Es3sB3r4sSNF3tETdkJJJnQQmYTOMP8jQ9o2/2TG9Z0UBp4qxgrELFRHjCRKJLpRpuvlzI++JPxBIh462QoDfMDWtVba3KWvcMfiCYG8HkVxgypkXOClVJFB0OYzfYujyNuOwkhJMfv4nT33uPyIb8sTBHoEN1ZHSlV/Zqszn9fPQnCX6TkUig==",
+          "hash": "212db1a868375caa47af8a5b865870c81dd70fc453bdefb09e51f63fae7dad9a"
+        },
+        {
+          "filename": "test2file.json",
+          "fileHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "publicKey": "Alice",
+          "timestamp": 1759286250074,
+          "signature": "SJBwdrxjPhRlAAROyYSB++GxGzYGQq5Lwus2H6qz/x8HR44BwsjDBia9IAa/iI9lpi2dIM/GPkhWBFKE7XSYIwsc5nQNe6BC9/TeM1oOb5DyEBAxDZocpWKEOLwChbu5zka6dffwAUvKdDQB8YVy3v6j1YkBJa5yGjZnJ+u0VUU6O3wJMVOHZmf4rgkYZVBpNGgs+ctZ2UU6/DRAkDGaO+LYrKnrSt/J8Og3QULjDGSUPFNVRL4s9zMvRdr9QkoRYx+tqpinjfezGIW3Y1+oK1G8paHzs+SNpwjhKQe7odEf1TjyeLtnDNXrgfI9jBhfDyuWoffUtCC1w8rRCy0+YA==",
+          "hash": "bb63a78edc1d2a296c404473cbcd74cd71e802bb4973e5ed02e6d12310e14b05"
+        }
+      ]
+    },
+    {
+      "blockNumber": 1,
+      "hash": "0000c235e770785124c6ec7bc7ec25365ac2fe33c9436c280b0b0d0ecc5d1020",
+      "nonce": 291234,
+      "difficulty": 4,
+      "timeTaken": 0.35,
+      "startTime": "10/01/2025, 02:38:18 AM",
+      "endTime": "02:38:19 AM",
+      "timestamp": 1759286298762,
+      "transactions": [
+        {
+          "filename": "testfile.txt",
+          "fileHash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+          "publicKey": "Alice",
+          "timestamp": 1759286298761,
+          "signature": "a7ea8rPgboDwxGSZ2rIY13Y54Br5GSAfmr5gxxCs6Zd9MWLkiuD888GzfMcuwTpNMN2UelTP7OKuqtXbCJGf8V1UuvJqyThbOWSp0wYPzhcaajZK7FRqtHCngZb4P+BVhcP7EYeyIc6CGSyMZjSTk5JkWYkh8vbfDgn+3DszeiRUKcOjdDJnQxD2bCC1ba+FcfMLBP7wOFXE64GXfzUsiwWAFgqSjrHL06U6eF5XO7Sji/x0t0+hAYwchCLMgQdvJQvk0/9bHxzTb/v2nUY6ncl8HqEx48aJaxsvJT83s+SnpNw7tj2KgTPO8pOyO+JgJ2JO2Ph3ABlBNTdDvPDS2w==",
+          "hash": "7a47f9d9fa0db716717dce0c9cd4a6ed52350aea3270c3ae1e9bd1e3d4a404d1"
+        },
+        {
+          "filename": "test2file.json",
+          "fileHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "publicKey": "Alice",
+          "timestamp": 1759286298762,
+          "signature": "CDmrF9KYyP3i7pXkoO6yt5nlzRActkTTVV2PozIgVGdn1UXymY3pw51KymTSiPTUa25gGO284xHvlKVcYTQWODDXKN3IKFCNn5M8mar6rBtJLqwUYakTFXdYs5454JjZ6xb5AEUQ6psvIzL+ubqxiu60FhodoDa1IIjKvV3+opt7hyv2t36SpQLZUmK1AY9BgDkth7moue2lXo5ydbmOEreoQ2mfjub+xqyagjmogr2OX5o97OsgZp+NsNxL8zlAVVKz7m8sPS5VllMd21x8fNi+2/hsMNazHtBQgY2RsaRfqp2c4fjaC1Ko7FTtCHJ2c29wldHSReXHzrnxbqrnhQ==",
+          "hash": "05da28cbc1f02e26e7690ba7fa6fb4e988fe59641326e74890a2364783e808a3"
+        }
+      ]
+    },
+    {
+      "blockNumber": 2,
+      "hash": "0000de6e973dc3326e935ee74ffb23400dfa0e42136539caa0bf801584ef8d35",
+      "nonce": 3478,
+      "difficulty": 4,
+      "timeTaken": 0.01,
+      "startTime": "10/01/2025, 02:40:11 AM",
+      "endTime": "02:40:11 AM",
+      "timestamp": 1759286411250,
+      "transactions": [
+        {
+          "filename": "testfile.txt",
+          "fileHash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+          "publicKey": "Alice",
+          "timestamp": 1759286411248,
+          "signature": "gl+0TbAiG09lyDcxUB7qcQv+eV5WKj74HHO80u5sCi7IZ8WOCL3Ly9k5SuB/90sE52VRjwDY2EGrj/T9MTfh/bpgO2JkWWojmgbsVUe2fuUVM2bQII/jGRWoaivY4l8Bl3U3D3/Vui+edAL7zrVaJWEu2LrzRkNCPOp5AUPukFoM4a2xWRON1xOdV0aI1jrpwrc2CL0noZYe9sXWRmttpMU/gXj3L4hpv3TnKmDlzp+jxbrTHY8XmI5ftbynq9h/jXxp5/XcrAgUp5+oUftBqifzFOnaAq0VvnkNaObL2UEX3g78/PawOGc3XLjGAyxkL4ZqhH/hKUDQG6MVIGrp/Q==",
+          "hash": "df4142a0a8d2617fba10fd366cbd9c11ad3a6c70cfb156ae3536489e36b243a3"
+        },
+        {
+          "filename": "test2file.json",
+          "fileHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "publicKey": "Alice",
+          "timestamp": 1759286411250,
+          "signature": "UWSPDFI2Hywjn5t3pKArupVXxjBLJkBrNvuiam1Pweh4+K+7KGd+1lY1+fRTI/tfXPeCyqahDXZlhswiMy/hXrNEA+QoLNTrtAI8yYg2lgWWfZJSU6vWryDWVFN3Mu29bKjszZJQ2+wG/ap/IthIKj8A+TKYL8BsAPd742XwnBEdAi4wfg9x4xLyDjXwA9wRh4VYHsY6DPtZWyDIFsX9zKj0asSuBttx8U8vRVH4e4TRv+1dV+UBfRIHEp0Zufwj6w14VpXcTxAHfufTo8WO/y8MdPMK/SGWSeq1M0GgWDlkO26syboSqlTaWq+0yHogEVwgM0TR+s7MtRY6VtLJ4A==",
+          "hash": "0e8645147c909a2359e93a8415bb4254db4b61f41cfd9f4b519f97c1c81258b5"
+        }
+      ]
+    },
+    {
+      "blockNumber": 6,
+      "hash": "0000a63c8fca884537332aed7265b393e6065f58fce72870788ce3faea080c02",
+      "nonce": 13801,
+      "difficulty": 4,
+      "timeTaken": 0.03,
+      "startTime": "10/01/2025, 02:43:50 AM",
+      "endTime": "02:43:50 AM",
+      "timestamp": 1759286630405,
+      "transactions": [
+        {
+          "filename": "testfile.txt",
+          "fileHash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+          "publicKey": "Alice",
+          "timestamp": 1759286630403,
+          "signature": "QN78oNyq7zStwH7lxpc1/Dr7IUaJ1HYkxCH83HS0Tv1AEXta+F4i3ntBOdsJ2nHj8WVO3s5lrQNLq+W8r4znE4u62gnFteU+SBOQgTQhSdawt8g7I1zk8w1BIdL13pIMAJyDO2eQeo8mhpZStlzZyxYJ1i7SN2EDlYodIE5DT9K+BK5uqbbOf+xkfBTlUCD3dk8/fzCr4nzvSUYM+lj2xhCgzNS+53OSo2EBz+e2iiL23der7E8xJ2DrHli0waQ5eOvLEEEURMCbsSGmN38yjMMuMzNNR5pYw8OOFrc1kDQU748CJBl5REoQXhcGikHEZSL52W4WBK0PP2quN9V4wA==",
+          "hash": "627dd373242b64e662ca20050cfb1e4ca7bf3add2d3d12afb6396e8ec364970e"
+        },
+        {
+          "filename": "test2file.json",
+          "fileHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "publicKey": "Alice",
+          "timestamp": 1759286630405,
+          "signature": "KqXGI1EPIWNO4StBmabrLAOhZ1FyHubBmq4Uxo9Z8d+gJ4EKAGOxueNNplC2VmHd+wL87jIOSOysMftrSVPe4KBB5jRez+b4Vzj+MA84JpNtZ8jLhKwbtQrM9ak7aOQC5BqaUAByB3T4ksh0k7B5zMzdsXM3G7czgDcXVf18AfiFYq3rhgFBEBCAFCr6GegZGfPs3p1Vsw2OqdN3jphhOM2ADqaNsPWW4hu/Lqrk5MZPJhNwUnRnHVX+dAPVfHIoE1BEMwyQrkUxu7WupQWms2LI8tQalPhergy2SP7wtMn92B9mK6tzfF8ppnkGTIZiVkbYfq1pq1x0f7QemBHmDQ==",
+          "hash": "16c7bfca93d48cd41b9d4532fa15f5a67c5e431fe7a5f4693d69b8ac0d77e83a"
+        }
+      ]
+    },
+    {
+      "blockNumber": 7,
+      "hash": "000009a93d2b7b78c095a314f73103cf77feef7b26073269f6209d8eb56e660d",
+      "nonce": 100447,
+      "difficulty": 4,
+      "timeTaken": 0.14,
+      "startTime": "10/01/2025, 02:46:05 AM",
+      "endTime": "02:46:05 AM",
+      "timestamp": 1759286765312,
+      "transactions": [
+        {
+          "filename": "testfile.txt",
+          "fileHash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+          "publicKey": "Alice",
+          "timestamp": 1759286765310,
+          "signature": "Y1lVdnt7c6bCjxkqqZen0ZQqT2JGkEq4Lz+EMXZsGzyyyTU0sFLOTo0LdssVCWWYkJQD9SNfLNtKH4iVcJJFEllsavBB0ltcAIsTqaTudLdsGj7Hwsz2bKyIwda/+2ljvL1NpztAs8zNrLpLSdtctYRn6T7boo9af41Rjc7P1qM8sWXvqrseDNOztiqulJuclu0jqiraZRpaPRNwrxhZlq6mZP+qoPgnJLpHDTkdCt5ZknYK++vJkFl7EQCszLQ34s0djuTEP3Z34cA5R29SocnGKodLj7W1Y+XYYuH82TUXpnczvQGoLt9BmNVuQyqZ42c8XR2HycSBALBNJHfGOg==",
+          "hash": "d37e046e74355c5ee5547088be218198ae57c22379c7475d6a173d4559725600"
+        },
+        {
+          "filename": "test2file.json",
+          "fileHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "publicKey": "Alice",
+          "timestamp": 1759286765312,
+          "signature": "WHhgRfYmb6nieDhySehFQPdxkLNOYz7rccqVf8R0JS0sA8v+xlVy3baqyA5MTqlF5YFPFAPALUzlZ2QvOioWgLxqHL+RKMUsKmJEI1FZpOfeDJH3og3OsZVFGL0VP8TloSOxSW6Hbk9U6fxRPpYr07NP8MjZwIN+Q2j1beZ2xzdJP8MbrzRetxksLYY8XYKJRk18WQVvHMINc891UqWjIsFSiMDLDYZ+Uwxvw/PHR1TbkALPt14TZ+hNleEV8hxvbeMJEfgLVj+RxQL97iidzaX13W+jYkCl0IONzzHCtINUqOYFERNTxVdyXdhKq/hGtOXyFUIaXBKNZ2pHIxI51Q==",
+          "hash": "9cb9d28a962c7554da6d646e767e96ed43cec8c1f6a6c3149462750127b1ad55"
+        }
+      ]
+    },
+    {
+      "blockNumber": 8,
+      "hash": "0000ddba761ec421473c9011f7c446febedcaf0d8e26eb2b7ff227e14649e043",
+      "nonce": 111631,
+      "difficulty": 4,
+      "timeTaken": 0.15,
+      "startTime": "10/01/2025, 02:46:20 AM",
+      "endTime": "02:46:20 AM",
+      "timestamp": 1759286780202,
+      "transactions": [
+        {
+          "filename": "testfile.txt",
+          "fileHash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+          "publicKey": "Alice",
+          "timestamp": 1759286780199,
+          "signature": "NtBoBvZEdvz5eNZtqyNqPrQgOPuzhnIV+2e4ojeJ2iRSAHjGDSl9JOEwdpmEQY2OuaTCfF/UTTdfuWvA6fpGZVL6oyTSjp00Fxi0MRFNK8+z5p4eA0FfFTVbnHB+lp1rsKU3EZiq9NEPIzIqcE6TvxY9dhCwLXyknLT10S9BRSJIUFPoy8Wfx7keyBcvYxfqqLRAqstFDnklpjJANrRnk8OCawq8Vlr2i1epjqYOUUY6ApvwEAJC25fe3bEZw8/HKKiLiPZq+8st5XWKSNrz6pgvkOrFRJrOw+cr84nHkw4MNEFtwyLJ0ayK5QoWeSs2kCjkibDAQbeVT2a35N4LGA==",
+          "hash": "beefe9c181f8fa81540c105293a5cdf5a6dc66dcbb9405b20e914c7f2a5c06b4"
+        },
+        {
+          "filename": "test2file.json",
+          "fileHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "publicKey": "Alice",
+          "timestamp": 1759286780201,
+          "signature": "TISc23xD+m9Lp08o/cTrTn04orYnptfYR0bOtShG1np4fFMvfRi/vYg3jQVpAngHld0OtGwVZmKa5zngE+jtlfwoLkiDJAS5pnobX/kn3/gkDk7WUKrtBQ9vhKf3oDTxlGeObze/ByKJnrPluheWHvMM7+2t4vUNlIkoOCxpFizip6i2Bgf+ID9AU30An2ZxcPMnmw3IoWK8W2oRfx2GmsndAalhQuTY6uDgg55ZvPeKvqGUReqHxpfBx/uz12WVtS/Psy0jcwfcSuHxWIreS8OiR9nG/ZGtHhQjS4BKUi2IN99tZCNzYsxnUVD8wTN65LIshmfMMvCZoIH9GqBB/w==",
+          "hash": "eedfc93c472617a6428d116a114ab9fd9847ad5073675959b62cd19209ceadcb"
+        }
+      ]
+    },
+    {
+      "blockNumber": 9,
+      "hash": "0000899fcc786a7b9254bd5e4cda40bda09ab852f15feb498aea6c9a905aa50f",
+      "nonce": 24114,
+      "difficulty": 4,
+      "timeTaken": 0.04,
+      "startTime": "10/04/2025, 06:29:24 AM",
+      "endTime": "06:29:24 AM",
+      "timestamp": 1759559364200,
+      "transactions": [
+        {
+          "inputs": [
+            {
+              "from_hash": "Alice",
+              "value_sent": 0,
+              "file_data": {
+                "filename": "testfile.txt",
+                "file_hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+                "content": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process."
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "to_hash": "Bob",
+              "value_received": 0,
+              "file_data": {
+                "filename": "testfile.txt",
+                "file_hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c"
+              }
+            }
+          ],
+          "timestamp": 1759559364198,
+          "signature": "kZKmuxNBJb/C3RTr6HULPChiOrqi3Itl3gv8IAXWl6M+e08C3w9CGdN3pcYfU2wwZXNXGzaKgdsnFaONCRpMOpi5uIncDq4p6zlBhF5MVJPN4RNyydURnvrmwA7bk9x0ZIIvT/oGxkuuDusUjvQxvR3zH86n1v8hSE2A8trLG0O7RpsPRg6x6oUyd5AG1Tuijzv4RboEvyxwJIc6yKN7D6DnlJ2HThuADlCvNza04NRf1SoNkktbNk/CtAb+0Z/KDcvQJmQEX0lxYr6qo41fO+6EzBauzszpvktk8iQHzBhdxLsyIoFhn2Du6fL6+WWxRJo1C3wMmvGbDov0xztnuQ==",
+          "transaction_hash": "c958780faf7c3f7197a7f0c4f4ab40d6e0d5950221547dcd77ed5748a3e5a20c"
+        },
+        {
+          "inputs": [
+            {
+              "from_hash": "Alice",
+              "value_sent": 0,
+              "file_data": {
+                "filename": "test2file.json",
+                "file_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "content": ""
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "to_hash": "Bob",
+              "value_received": 0,
+              "file_data": {
+                "filename": "test2file.json",
+                "file_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          ],
+          "timestamp": 1759559364199,
+          "signature": "S5yrzLsE7FlS4vWMYvLyJbP0sx2Emd1r4L79vGVoBZ2GgDTb/LU+Yj0uOr+qPUB8n8oa20j0CZO6HFQ+4qv7m3AdrbLycpCzRs5KQqOXrXYYqoL9vew4znIy7wS0v8WdzZA/muSgHBv/9hCNjZ4Ol2nI0SQpa7GuYKILxhZ4ff227gQ0VmbzZV7Q55twgLyZgb1mZ4mIx6g0PJpG4XFIRScsp8/HP0FMiy5pC8axi5dFRgQFUo+gzXjGlFeQuKI1Wbn9bQWOGxgkDrrrIxXOVVD2OUUG5aGdha3qFi51yquHyWuaRSrQrFdLI95VsZd80N4SiY5VnHGCK+YdKXRzBg==",
+          "transaction_hash": "b1af25307d3d6cde189abf37592b7613deaa3f9a3e4353d417a626390bc8ccb4"
+        }
+      ]
+    },
+    {
+      "blockNumber": 10,
+      "hash": "0000a7ab2a82f79355c962c7b4115fc639f76056649bd5d2b6632963469512cf",
+      "nonce": 76649,
+      "difficulty": 4,
+      "timeTaken": 0.09,
+      "startTime": "10/04/2025, 06:33:25 AM",
+      "endTime": "06:33:25 AM",
+      "timestamp": 1759559605302,
+      "transactions": [
+        {
+          "inputs": [
+            {
+              "from_hash": "Alice",
+              "value_sent": 0,
+              "file_data": {
+                "filename": "testfile.txt",
+                "file_hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+                "content": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process."
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "to_hash": "Bob",
+              "value_received": 0,
+              "file_data": {
+                "filename": "testfile.txt",
+                "file_hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c"
+              }
+            }
+          ],
+          "timestamp": 1759559605300,
+          "signature": "fmLOUvxWre0TsGp7znwtDfGU99u7XvSWNuKR8GmbXrlBETLzWBCjI+ijMvNBylknOHZ4oy3wfgkYIFIF9fFqj6kOeoF3hbPJ71uSRUE9PZLRG0KVSrm5HlTUVTbhgI1GL0Rv9cAMDcQVMBkoUsCDxyZXgN1eiOQ8f3pl3dtO6NVZXimc3lelsJmx97atk+30KBwqhlKhzGdPRfdPNYf1VUUibnSBNFYStx6nX9QmEc9L0n3Yy61hIOH4rbADZPbjRhGAcGkpNVynvPv27Pyr9JtUBMjPojs2MtqTvi6eriCbwMKaQDcQeSIsVK6CKsQLfdIRZ+NQGBVSaaUGcPoqTA==",
+          "transaction_hash": "d9bec587f2ea24f9e243f8356afd33802d4202e8079b0848998e88906917074a"
+        },
+        {
+          "inputs": [
+            {
+              "from_hash": "Alice",
+              "value_sent": 0,
+              "file_data": {
+                "filename": "test2file.json",
+                "file_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "content": ""
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "to_hash": "Bob",
+              "value_received": 0,
+              "file_data": {
+                "filename": "test2file.json",
+                "file_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          ],
+          "timestamp": 1759559605302,
+          "signature": "qMZlN32fFEuormoIXIzC/O/jAWADOEY+rDvedq7hqJXeaLwwBpGmcMj1pJNxEDIzEUuz4LbdfKKpaI07EytGe3ThUQmVgAgb1J0Wh2bZooyBc09q52aY1ZyBnsMftEMBImmR8HgIKLXtWNyf84EX2b9laQj7lGwKJUN9Uv0PhvPduyKzfEbrOr5deN8N+m6ZXxCYrsjATye42bzk5uRyPg2NU9baylnnfTyPzhEpZPUBkP5zOvrM7fzyIgXd9OY5lAVLyPXnEzkWfZayEIYpjz49r8LDBphgHBrKBWO3IrXyTCH3lA0RHbvPQRgtP1pCYsDy88Ef4t6DDYKfEUgXCA==",
+          "transaction_hash": "5bd3b5b72710c9bc467a543a45a268559edaaaaf5c2e401436655ca9283b9b86"
+        }
+      ]
+    },
+    {
+      "blockNumber": 1,
+      "hash": "000066effe0eb493661cf4d2d2b96e3455dcdda0cbd3c993d6cf60b204ff3dbb",
+      "nonce": 50812,
+      "difficulty": 4,
+      "timeTaken": 0.06,
+      "startTime": "10/04/2025, 06:35:04 AM",
+      "endTime": "06:35:04 AM",
+      "timestamp": 1759559704658,
+      "transactions": [
+        {
+          "inputs": [
+            {
+              "from_hash": "Alice",
+              "value_sent": 0,
+              "file_data": {
+                "filename": "testfile.txt",
+                "file_hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
+                "content": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process."
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "to_hash": "Bob",
+              "value_received": 0,
+              "file_data": {
+                "filename": "testfile.txt",
+                "file_hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c"
+              }
+            }
+          ],
+          "timestamp": 1759559704600,
+          "signature": "VC9mJKltmYcheZIiGMbspJ5kR4DCv7xLqYbV/WsVGdvwBrPX8bp32etSnXCn4Dn2SinaCKmaYclhbUfmpRg/JxaLgAswzUBfkh5vpvjBAKTn4GeoOoSLPHXWYYh6FGbjPGNMCuGauHbBw4pyh6Cjz9RhIWovNoTjdyKRSXwAWaxkgVs69o4UUXc9pNZf9qoa+NN9iGoEWCNtKHzIM0FVc70frMgEZhhsoSsLJfIafqV0I9j6LLWuCD/VFTMg8ZtW03L8TV+wq+MeWDZQdKDH6fGUM1Yi/x3r1FetWbzFf2fUqh98qy3xpKRWRwIwzzQksVbz90wErUfvpvFN6yZ8gQ==",
+          "transaction_hash": "72d73ea4c072b1fcb78f4aac468be87a166119460c8f5da6b991f2f2291304e7"
+        },
+        {
+          "inputs": [
+            {
+              "from_hash": "Alice",
+              "value_sent": 0,
+              "file_data": {
+                "filename": "test2file.json",
+                "file_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "content": ""
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "to_hash": "Bob",
+              "value_received": 0,
+              "file_data": {
+                "filename": "test2file.json",
+                "file_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            }
+          ],
+          "timestamp": 1759559704603,
+          "signature": "ZQi/P4GS5YVS6hi9HWsG3E55EqPlnG7rn6BFE8bXiOU3Tk2RkyJRuLOdyNzKMYQVCuqUKtoLpsE0nwRWmTCofv1e6PFlQEdJdsmIO0B+F+CcsPkAlM0Yyt7MCVA4135+n9XlTdBK8pldHJJj0hX3LjwS0R4+3dLj+d1BkhBKQsC3ZMoGK+FGYC7+cYMxEBadnlhn4urGzfJXKjSt3Cvqw04KGsOaXCfubi4bYu34ZBHR+J/T8S2hQZSY8XF6LdqcNuaU9V3WR4P2tzF6vGTK2L0c0S0ZCBub0hZOtk8W/2RRs6BEOBEkRhe7Om9GXKFO8FWq54nG6Nbs682Pk3LRHA==",
+          "transaction_hash": "7185691901ebf82a066c508dca4bea65ac64e2606a561c4d2480eeba5e1009cc"
         }
       ]
     }

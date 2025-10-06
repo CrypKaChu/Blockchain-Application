@@ -1,8 +1,6 @@
 import { readFileSync, promises as fsPromises } from 'fs';
 import { createSign, createVerify } from 'crypto';
 
-
-
 async function signDocument(docPath, privateKeyPath, outputPath) {
     try {
         // Read the document to be signed
