@@ -107,12 +107,12 @@ export default class Block {
         this.nonce = nonce;
 
         // Display mining results to console
-        console.log('#'.repeat(50));
+        console.log('#'.repeat(80));
         console.log(`Block ${this.blockNumber} Mined`);
         console.log(`Proof of work: ${hash} at nonce ${nonce}`);
         console.log(`Time taken: ${timeTaken.toFixed(2)} seconds, starting at ${startTimeStr}, ending at ${endTimeStr}`);
         console.log(`Difficulty: ${difficulty}`);
-        console.log('#'.repeat(50));
+        console.log('#'.repeat(80));
 
         return miningResult;
       }
@@ -134,7 +134,6 @@ export default class Block {
 
   /**
    * Get a summary object containing key block information
-   * Useful for debugging, logging, and API responses
    * 
    * @returns {Object} Summary object with block metadata and validation status
    */

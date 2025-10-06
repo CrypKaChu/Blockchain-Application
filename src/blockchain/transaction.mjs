@@ -62,7 +62,6 @@ export default class Transaction {
         // Create inputs array representing what's being spent (the file)
         const inputs = [{
             from_hash: fromAddress,
-            value_sent: 0, // File transactions have no monetary value
             file_data: {
                 filename: filename,
                 file_hash: fileHash,
@@ -73,7 +72,6 @@ export default class Transaction {
         // Create outputs array representing what's being received (the file)
         const outputs = [{
             to_hash: toAddress,
-            value_received: 0, // File transactions have no monetary value
             file_data: {
                 filename: filename,
                 file_hash: fileHash

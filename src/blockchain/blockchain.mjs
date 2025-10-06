@@ -1,5 +1,6 @@
 // File: blockchain.mjs
 import Block from './block.mjs';
+import Transaction from './transaction.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -16,10 +17,8 @@ export default class Blockchain {
   constructor() {
     // Initialize empty blockchain
     this.blocks = [];
-    // Set proof-of-work difficulty (number of leading zeros required)
+    // Set proof-of-work difficulty
     this.difficulty = 4;
-    // Store mining performance results for analysis
-    this.miningResults = [];
 
     // Set up data directory for persistence
     // Get current file path and resolve to project structure
@@ -42,15 +41,15 @@ export default class Blockchain {
     // Create genesis block with special parameters
     // Block number 0, previous hash '0' (no previous block), empty transactions array
     const genesisBlock = new Block(0, '0', []);
-    
+
     // Mine the genesis block to establish initial proof-of-work
     // This creates a valid hash that meets the difficulty requirement
     genesisBlock.mineBlock(this.difficulty);
-    
+
     // Add the mined genesis block to the blockchain
     this.blocks.push(genesisBlock);
   }
-  
+
   /**
    * Create and mine a new block with the provided transactions
    * This is the core method for adding new blocks to the blockchain
@@ -64,130 +63,27 @@ export default class Blockchain {
     if (this.blocks.length === 0) {
       this.createGenesisBlock();
     }
-    
+
     // Get the hash of the latest block to maintain chain integrity
     const previousHash = this.getLatestBlock() ? this.getLatestBlock().hash : '0';
-    
+
     // Calculate the next block number (sequential numbering)
     const blockNumber = this.blocks.length;
-    
+
     // Create new block with transactions
     const newBlock = new Block(blockNumber, previousHash, transactions || []);
-    
+
     // Mine the block using proof-of-work algorithm
-    const miningResult = newBlock.mineBlock(difficulty);
-    
+    newBlock.mineBlock(difficulty);
+
     // Add the mined block to the blockchain
     this.addBlock(newBlock);
-    
-    // Store mining performance data for analysis
-    this.miningResults.push(miningResult);
-    
+
     // Persist blockchain state to disk
     this.saveBlockchainState();
-    
+
     // Return both the block and mining result for further processing
-    return { block: newBlock, miningResult };
-  }
-
-  /**
-   * Save mining results to a JSON file for analysis and persistence
-   * Stores performance data including timing, difficulty, and block information
-   * 
-   * @param {string} filename - Optional custom filename, defaults to 'mining-results.json'
-   * @returns {boolean} Success status of the save operation
-   */
-  saveMiningResults(filename = null) {
-    // Set default filename in datastore directory
-    const defaultFilename = path.join(this.dataDir, 'mining-results.json');
-    const filepath = filename || defaultFilename;
-
-    // Structure the output data with metadata and results
-    const outputData = {
-      metadata: {
-        totalBlocks: this.miningResults.length,
-        generatedAt: new Date().toISOString(),
-        difficulty: this.difficulty
-      },
-      miningResults: this.miningResults
-    };
-
-    try {
-      // Write JSON data with pretty formatting (2-space indentation)
-      fs.writeFileSync(filepath, JSON.stringify(outputData, null, 2));
-      console.log(`\n💾 Mining results saved to: ${filepath}`);
-      return true;
-    } catch (error) {
-      console.error('Error saving mining results:', error.message);
-      return false;
-    }
-  }
-
-  /**
-   * Load mining results from a JSON file
-   * Restores previously saved mining performance data for analysis
-   * 
-   * @param {string} filename - Optional custom filename, defaults to 'mining-results.json'
-   * @returns {Object|null} Loaded data object or null if file doesn't exist/error
-   */
-  loadMiningResults(filename = null) {
-    // Set default filename in datastore directory
-    const defaultFilename = path.join(this.dataDir, 'mining-results.json');
-    const filepath = filename || defaultFilename;
-
-    try {
-      // Check if file exists before attempting to read
-      if (fs.existsSync(filepath)) {
-        // Parse JSON data from file
-        const data = JSON.parse(fs.readFileSync(filepath, 'utf-8'));
-        
-        // Restore mining results array (fallback to empty array if corrupted)
-        this.miningResults = data.miningResults || [];
-        
-        console.log(`📂 Loaded ${this.miningResults.length} mining results from ${filepath}`);
-        return data;
-      } else {
-        console.log(`📂 No existing mining results file found: ${filepath}`);
-        return null;
-      }
-    } catch (error) {
-      console.error('Error loading mining results:', error.message);
-      return null;
-    }
-  }
-
-  /**
-   * Generate a comprehensive summary of mining performance
-   * Calculates statistics including total time, averages, and performance metrics
-   * 
-   * @returns {Object} Summary object with mining statistics and performance data
-   */
-  getMiningSummary() {
-    // Handle case where no mining has occurred
-    if (this.miningResults.length === 0) {
-      return { message: "No mining results available" };
-    }
-
-    // Calculate total mining time across all blocks
-    const totalTime = this.miningResults.reduce((sum, result) => sum + result.timeTaken, 0);
-    
-    // Calculate average mining time per block
-    const avgTime = totalTime / this.miningResults.length;
-    
-    // Find fastest and slowest mining times for performance analysis
-    const fastestMining = Math.min(...this.miningResults.map(r => r.timeTaken));
-    const slowestMining = Math.max(...this.miningResults.map(r => r.timeTaken));
-
-    // Return comprehensive summary with performance metrics
-    return {
-      totalBlocks: this.miningResults.length,
-      totalMiningTime: parseFloat(totalTime.toFixed(2)),
-      averageMiningTime: parseFloat(avgTime.toFixed(2)),
-      fastestMining: parseFloat(fastestMining.toFixed(2)),
-      slowestMining: parseFloat(slowestMining.toFixed(2)),
-      difficulty: this.difficulty,
-      results: this.miningResults
-    };
+    return { block: newBlock };
   }
 
   /**
@@ -198,7 +94,6 @@ export default class Blockchain {
    */
   addBlock(block) {
     this.blocks.push(block);
-    console.log(`Block ${block.blockNumber} added to blockchain`);
   }
 
   /**
@@ -241,7 +136,7 @@ export default class Blockchain {
         return false;
       }
     }
-    
+
     // All validations passed
     return true;
   }
@@ -265,51 +160,60 @@ export default class Blockchain {
   loadBlockchainState() {
     try {
       const blockchainFile = path.join(this.dataDir, 'blockchain.json');
-      
+
       if (fs.existsSync(blockchainFile)) {
         const fileContent = fs.readFileSync(blockchainFile, 'utf-8');
-        
+
         // Handle empty or corrupted files gracefully
         if (!fileContent.trim()) {
           console.log("📂 Blockchain file is empty, starting fresh");
           this.blocks = [];
           return false;
         }
-        
+
         // Parse JSON data
         const data = JSON.parse(fileContent);
-        
+
         // Validate data structure
         if (!data.blocks || !Array.isArray(data.blocks)) {
           console.log("📂 Invalid blockchain data, starting fresh");
           this.blocks = [];
           return false;
         }
-        
+
         // Reconstruct Block instances from serialized data
         // This is crucial because JSON.parse returns plain objects, not class instances
         this.blocks = data.blocks.map(blockData => {
-          // Create new Block instance with basic properties
-          const block = new Block(blockData.blockNumber, blockData.previousHash, blockData.transactions);
-          
+          // Reconstruct transactions as Transaction class instances
+          const reconstructedTransactions = blockData.transactions.map(txData => {
+            return new Transaction({
+              inputs: txData.inputs,
+              outputs: txData.outputs,
+              timestamp: txData.timestamp,
+              signature: txData.signature
+            });
+          });
+
+          // Create new Block instance with reconstructed transactions
+          const block = new Block(blockData.blockNumber, blockData.previousHash, reconstructedTransactions);
+
           // Restore additional properties that were serialized
           block.timestamp = blockData.timestamp;
           block.nonce = blockData.nonce;
           block.hash = blockData.hash;
-          
+
           return block;
         });
-        
-        console.log(`📂 Loaded ${this.blocks.length} blocks from blockchain state`);
+
         return true;
       } else {
-        console.log("📂 No blockchain file found, starting fresh");
+        console.log("No blockchain file found, starting fresh");
         this.blocks = [];
         return false;
       }
     } catch (error) {
       console.error('Error loading blockchain state:', error.message);
-      console.log("📂 Starting with empty blockchain");
+      console.log(" Starting with empty blockchain");
       this.blocks = [];
       return false;
     }
@@ -329,18 +233,55 @@ export default class Blockchain {
         difficulty: this.difficulty,
         lastUpdated: new Date().toISOString()
       };
-      
+
       // Write to blockchain.json with pretty formatting
       fs.writeFileSync(
-        path.join(this.dataDir, 'blockchain.json'), 
+        path.join(this.dataDir, 'blockchain.json'),
         JSON.stringify(blockchainData, null, 2)
       );
-      
-      console.log(`💾 Blockchain state saved with ${this.blocks.length} blocks`);
+
       return true;
     } catch (error) {
       console.error('Error saving blockchain state:', error.message);
       return false;
     }
+  }
+
+  /**
+   * Get comprehensive blockchain status summary
+   * Provides overview of blockchain state, validation, and latest block information
+   * 
+   * @returns {Object} Summary object with blockchain status and metrics
+   */
+  getSummary() {
+    const latestBlock = this.getLatestBlock();
+    const isValid = this.isChainValid();
+
+    return {
+      totalBlocks: this.blocks.length,
+      isValid: isValid,
+      latestBlock: latestBlock ? latestBlock.getSummary() : null,
+      difficulty: this.difficulty,
+    };
+  }
+
+  /**
+   * Get transaction by hash
+   * Searches through all blocks to find a specific transaction
+   * 
+   * @param {string} transactionHash - The hash of the transaction to find
+   * @returns {Object|null} Transaction object or null if not found
+   */
+  getTransactionByHash(transactionHash) {
+    for (const block of this.blocks) {
+      if (block.transactions && block.transactions.length > 0) {
+        for (const transaction of block.transactions) {
+          if (transaction.transaction_hash === transactionHash) {
+            return transaction;
+          }
+        }
+      }
+    }
+    return null;
   }
 }

@@ -2,74 +2,66 @@
   "blocks": [
     {
       "blockNumber": 0,
-      "timestamp": 1759559704603,
+      "timestamp": 1759716436234,
       "previousHash": "0",
       "transactions": [],
-      "nonce": 32161,
-      "hash": "0000cdc62290d22d82ceec1ee9d7081d855da2a7b3e4b0977f77579935b4f063"
+      "nonce": 108406,
+      "hash": "0000a54b6ad704b4e4cab15b1629a0d159178156555cabd8e3b9946b60c5d55f"
     },
     {
       "blockNumber": 1,
-      "timestamp": 1759559704658,
-      "previousHash": "0000cdc62290d22d82ceec1ee9d7081d855da2a7b3e4b0977f77579935b4f063",
+      "timestamp": 1759716436362,
+      "previousHash": "0000a54b6ad704b4e4cab15b1629a0d159178156555cabd8e3b9946b60c5d55f",
       "transactions": [
         {
           "inputs": [
             {
-              "from_hash": "Alice",
-              "value_sent": 0,
               "file_data": {
-                "filename": "testfile.txt",
-                "file_hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c",
-                "content": "This is a test file for blockchain mining.\nIt contains some sample text that will be included in the block.\nThe content will be hashed as part of the mining process."
+                "filename": "22048358-module-2-answers.txt",
+                "file_hash": "285d87afa1ab4944a90164c8e707eb61e11fcf057d14d5ceeb9c2b71d73dee5f",
+                "content": "Explain the basic principles of public key encryption. How does it differ from symmetric key cryptography?\nPublic key encryption, or asymmetric cryptography, uses two separate keys: a public key for encryption and a private key for decryption. The public key is openly shared, while the private key is kept secret by the owner. This system ensures that anyone can encrypt a message using the recipient’s public key, but only the recipient can decrypt it using their private key. Symmetric key cryptography uses the same key for both encryption and decryption, which means both parties must securely share and manage the same secret key. The key difference lies in how keys are used and shared. Public key encryption solves the problem of secure key distribution, but is generally slower than symmetric methods. In practice, systems often combine both: public key encryption to exchange a symmetric key, which is then used for efficient data encryption.\n\nList three real-world applications of public key cryptography/encryption\n- SSL/TLS (HTTPS): Used to secure communication between web browsers and servers.\n- Email Encryption (e.g., PGP): Ensures confidentiality and authenticity of email content.\n- Digital Signatures: Used to verify the integrity and origin of software or digital documents."
               }
             }
           ],
           "outputs": [
             {
-              "to_hash": "Bob",
-              "value_received": 0,
               "file_data": {
-                "filename": "testfile.txt",
-                "file_hash": "839914766621643f46cc7eb23a1007e6876bfb0a74697807bb7be14e53a1699c"
+                "filename": "22048358-module-2-answers.txt",
+                "file_hash": "285d87afa1ab4944a90164c8e707eb61e11fcf057d14d5ceeb9c2b71d73dee5f"
               }
             }
           ],
-          "timestamp": 1759559704600,
-          "signature": "VC9mJKltmYcheZIiGMbspJ5kR4DCv7xLqYbV/WsVGdvwBrPX8bp32etSnXCn4Dn2SinaCKmaYclhbUfmpRg/JxaLgAswzUBfkh5vpvjBAKTn4GeoOoSLPHXWYYh6FGbjPGNMCuGauHbBw4pyh6Cjz9RhIWovNoTjdyKRSXwAWaxkgVs69o4UUXc9pNZf9qoa+NN9iGoEWCNtKHzIM0FVc70frMgEZhhsoSsLJfIafqV0I9j6LLWuCD/VFTMg8ZtW03L8TV+wq+MeWDZQdKDH6fGUM1Yi/x3r1FetWbzFf2fUqh98qy3xpKRWRwIwzzQksVbz90wErUfvpvFN6yZ8gQ==",
-          "transaction_hash": "72d73ea4c072b1fcb78f4aac468be87a166119460c8f5da6b991f2f2291304e7"
+          "timestamp": 1759716436231,
+          "signature": "QfgkcN6n3A2/r5SsgLqjF0ohLeaBIUo9u0khRX9FJea7O4zpMXUbuvA5o3InvaB1mI56QZQuZ3awPht3GE007Lzl/Y4AnSHNHBR/cnmeugIgKr2VIBMyRmvuNJ2aMxyN6Hi6IepcrZQGpYTjDcKs912cbf0NnGK9C+Izht58d/iA02N1+ciCA+oBrO1/gK4nt27tPl9IVtc1cgHJhNqI9wNEpXXMOmmBugIpoiGR4nC1HUBT2Z4OlGFl8jXggrIakmexv8p+075fcwPXHumVO0w93UtbdQDxL7qfVmD8F3VySgFv2FgbG84s09b9yy7ARGDrCMhacs+0mJ3lLIkZzQ==",
+          "transaction_hash": "e67d414b5a62bb1352481d0c986e4eb9de36544272df6988535623ef93bb1325"
         },
         {
           "inputs": [
             {
-              "from_hash": "Alice",
-              "value_sent": 0,
               "file_data": {
-                "filename": "test2file.json",
-                "file_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-                "content": ""
+                "filename": "22048358-module-2-answers.sig",
+                "file_hash": "df00a2b64102e5fcf85854b888763fd865eeaf035f672bf81bb517b57934a0d3",
+                "content": "ArRdaQzuN8KcOJ1r5oxHRUxFdREB/7EvKbYbwsqK+3xsxKYnXBoZmjltU9geU/9ufghw2wLrbtlEFu6JcOBFTwAJzyXru5LvQykWZyd5upDgA/Y6K1DgRink9L06a0DFUf/bza0Y91slMWsPEXyJf1ptw8n+j56T5MGJ13pPfSovOU81up3bE0Jx5ERXu5zLzeD4yxho+cjsSLfvR/TBUumqBQjPJqZTgn4fy+/hrs9fdYZxja/HllTsa8Fv4fcvQ4z5su50Imdq1SF6p2BYGSaqIYBI6Hua9nok8Zelh3oSbqEgM4EVn98F1osNXslmD85/pE/lpkmuwQHorVbbYw=="
               }
             }
           ],
           "outputs": [
             {
-              "to_hash": "Bob",
-              "value_received": 0,
               "file_data": {
-                "filename": "test2file.json",
-                "file_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                "filename": "22048358-module-2-answers.sig",
+                "file_hash": "df00a2b64102e5fcf85854b888763fd865eeaf035f672bf81bb517b57934a0d3"
               }
             }
           ],
-          "timestamp": 1759559704603,
-          "signature": "ZQi/P4GS5YVS6hi9HWsG3E55EqPlnG7rn6BFE8bXiOU3Tk2RkyJRuLOdyNzKMYQVCuqUKtoLpsE0nwRWmTCofv1e6PFlQEdJdsmIO0B+F+CcsPkAlM0Yyt7MCVA4135+n9XlTdBK8pldHJJj0hX3LjwS0R4+3dLj+d1BkhBKQsC3ZMoGK+FGYC7+cYMxEBadnlhn4urGzfJXKjSt3Cvqw04KGsOaXCfubi4bYu34ZBHR+J/T8S2hQZSY8XF6LdqcNuaU9V3WR4P2tzF6vGTK2L0c0S0ZCBub0hZOtk8W/2RRs6BEOBEkRhe7Om9GXKFO8FWq54nG6Nbs682Pk3LRHA==",
-          "transaction_hash": "7185691901ebf82a066c508dca4bea65ac64e2606a561c4d2480eeba5e1009cc"
+          "timestamp": 1759716436234,
+          "signature": "UcdqT33nQB0DBHporO8mT98on9OSz6Kbi6GAzNVFsQcxRC1ZeqKzEcxDin8lFg8UwSneknaWQETeR5rkFghFD6gW8FAa+Z3r2KHBybiw5plFQ29sgMtkZXVaAmQVlEgZq9E4JiXqDBavfxLb6Un5aAQ5gkN25s1M//4mlHqtu6AbqjnQmmsf5fK+u4F2q1/ccoCYcHsiBXDvONJ4WyccV1TJin5pQNbFsEqaNgq+tcK0h+iarRzUvos9leZFap7UlIlqxX1QMOI70wUZu1G59rZCjuJ6cXsIJjCOMpQRlXekUSJQ8nZtcngm0UxKDQb7XzgnnZ87G+O9a8rEnbOBxg==",
+          "transaction_hash": "dd94ff7cc84c60da24743bfcb039aa756de4583039de4f99082c8fd3ba684829"
         }
       ],
-      "nonce": 50812,
-      "hash": "000066effe0eb493661cf4d2d2b96e3455dcdda0cbd3c993d6cf60b204ff3dbb"
+      "nonce": 124942,
+      "hash": "00004cd5a3f625b217ecf4f3906a7810d7d7655c942d9d1e595e914aba06dabb"
     }
   ],
   "difficulty": 4,
-  "lastUpdated": "2025-10-04T06:35:04.714Z"
+  "lastUpdated": "2025-10-06T02:07:16.494Z"
 }

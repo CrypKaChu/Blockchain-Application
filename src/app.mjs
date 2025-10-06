@@ -1,11 +1,8 @@
 import Blockchain from "./blockchain/blockchain.mjs";
-import Block from "./blockchain/block.mjs";
 import Transaction from "./blockchain/transaction.mjs";
-import { readJSONFile } from "./blockchain/readJSON.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 import fs from 'fs';
-import crypto from 'crypto';
 import { createSign, createVerify } from 'crypto';
 
 /**
@@ -90,16 +87,16 @@ async function main() {
         console.log("Usage:");
         console.log("  node app.mjs mine <private-key-file> <file1> <file2>");
         console.log("  node app.mjs validate");
-        console.log("  node app.mjs status");
         console.log("  node app.mjs block <block-hash>");
+        console.log("  node app.mjs transaction <transaction-hash>");
         console.log("  node app.mjs sign <document-path> <private-key-path> <output-signature-path>");
         console.log("  node app.mjs verify <document-path> <signature-path> <certificate-path>");
         console.log("");
         console.log("Examples:");
         console.log("  node app.mjs mine 12345678-private.key testfile.txt test2file.json");
         console.log("  node app.mjs validate");
-        console.log("  node app.mjs status");
         console.log("  node app.mjs block 0000abc123...");
+        console.log("  node app.mjs transaction abc123def456...");
         console.log("  node app.mjs sign document.txt private.key signature.sig");
         console.log("  node app.mjs verify document.txt signature.sig certificate.pem");
         process.exit(1);
@@ -113,7 +110,6 @@ async function main() {
 
         // Load existing blockchain state
         chain.loadBlockchainState();
-        chain.loadMiningResults();
 
         if (command === 'mine') {
             // Mining command
@@ -160,29 +156,22 @@ async function main() {
             const tx1 = Transaction.fromFile({
                 filename: file1Name,
                 content: file1Content,
-                fromAddress: "Alice",
-                toAddress: "Bob",
                 signWithPrivateKeyPath: privateKeyPath
             });
 
             const tx2 = Transaction.fromFile({
                 filename: file2Name,
                 content: file2Content,
-                fromAddress: "Alice",
-                toAddress: "Bob",
                 signWithPrivateKeyPath: privateKeyPath
             });
 
             const result = chain.createAndMineBlock([tx1, tx2], 4);
 
-            // Save results to JSON file
-            chain.saveMiningResults();
-
         } else if (command === 'validate') {
             // Validation command
             const isValid = chain.isChainValid();
 
-            if (isValid) {;
+            if (isValid) {
                 console.log("#".repeat(80));
                 chain.blocks.forEach((block, idx) => {
                     console.log(`Block ${idx}: ${block.hash} valid`);
@@ -193,25 +182,6 @@ async function main() {
             } else {
                 console.log("Blockchain is INVALID!");
                 process.exit(1);
-            }
-
-        } else if (command === 'status') {
-            // Status command
-            console.log("📊 Blockchain Status\n");
-            console.log("#".repeat(50));
-
-            const status = chain.getSummary();
-            console.log(`Total Blocks: ${status.totalBlocks}`);
-            console.log(`Chain Valid: ${status.isValid ? '✅ YES' : '❌ NO'}`);
-            console.log(`Mining Results: ${status.miningResults}`);
-
-            if (status.latestBlock) {
-                console.log("\nLatest Block:");
-                console.log(`  Block #${status.latestBlock.blockNumber}`);
-                console.log(`  Hash: ${status.latestBlock.hash}`);
-                console.log(`  Timestamp: ${new Date(status.latestBlock.timestamp).toLocaleString()}`);
-                console.log(`  Transactions: ${status.latestBlock.transactionCount}`);
-                console.log(`  Valid: ${status.latestBlock.isValid ? '✅' : '❌'}`);
             }
 
         } else if (command === 'block') {
@@ -231,38 +201,26 @@ async function main() {
             const prevHash = block.previousHash || '0'.repeat(64);
 
             // Print block info
+            console.log("#".repeat(80));
             console.log(`Block: ${block.hash}`);
             console.log(`Previous block: ${prevHash}`);
             console.log(`Transactions: ${block.transactions.length}`);
 
             block.transactions.forEach((tx, idx) => {
                 console.log(`Transaction ${idx + 1}:`);
-                console.log(`  transaction_hash: ${tx.transaction_hash}`);
+                console.log(`  - transaction_hash: ${tx.transaction_hash}`);
                 
                 // Display inputs
                 tx.inputs.forEach((input, inputIdx) => {
-                    console.log(`  Input ${inputIdx + 1}:`);
-                    console.log(`    from_hash: ${input.from_hash}`);
-                    console.log(`    value_sent: ${input.value_sent}`);
                     if (input.file_data) {
-                        console.log(`    filename: ${input.file_data.filename}`);
-                        console.log(`    file_hash: ${input.file_data.file_hash}`);
+                        console.log(`  - filename: ${input.file_data.filename}`);
+                        console.log(`  - hash: ${input.file_data.file_hash}`);
                     }
                 });
                 
-                // Display outputs
-                tx.outputs.forEach((output, outputIdx) => {
-                    console.log(`  Output ${outputIdx + 1}:`);
-                    console.log(`    to_hash: ${output.to_hash}`);
-                    console.log(`    value_received: ${output.value_received}`);
-                    if (output.file_data) {
-                        console.log(`    filename: ${output.file_data.filename}`);
-                        console.log(`    file_hash: ${output.file_data.file_hash}`);
-                    }
-                });
                 
-                if (tx.signature) console.log(`  signature: ${tx.signature}`);
-                if (tx.timestamp) console.log(`  timestamp: ${new Date(tx.timestamp).toISOString()}`);
+                if (tx.signature) console.log(`  - signature: ${tx.signature}`);
+                if (tx.timestamp) console.log(`  - timestamp: ${new Date(tx.timestamp).toISOString()}`);
             });
 
             // Print other block info
@@ -322,9 +280,35 @@ async function main() {
 
             verifySignature(docPath, signaturePath, certPath);
 
+        } else if (command === 'transaction') {
+            // Get specific transaction by hash
+            if (args.length < 2) {
+                console.log("Usage: node app.mjs transaction <transaction-hash>");
+                process.exit(1);
+            }
+
+            const transactionHash = args[1];
+            const transaction = chain.getTransactionByHash(transactionHash);
+
+            if (!transaction) {
+                console.log(`Transaction with hash ${transactionHash} not found.`);
+                process.exit(1);
+            }
+
+            console.log("#".repeat(80));
+            console.log(`Transaction: ${transaction.transaction_hash}`);
+            console.log(`Valid Signature: ${transaction.isValid() ? 'Valid' : 'Invalid'}`);
+            transaction.inputs.forEach((input, idx) => {
+                if (input.file_data) {
+                    console.log(`File name: ${input.file_data.filename}`);
+                }
+            });
+            console.log(`Signature: ${transaction.signature}`);
+            console.log(`Timestamp: ${new Date(transaction.timestamp).toISOString()}`);
+            console.log("#".repeat(80));
         } else {
             console.log(`Unknown command: ${command}`);
-            console.log("Available commands: mine, validate, status, block, sign, verify");
+            console.log("Available commands: mine, validate, block, transaction, sign, verify");
             process.exit(1);
         }
 
