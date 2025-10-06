@@ -42,9 +42,9 @@ export default class Blockchain {
     // Block number 0, previous hash '0' (no previous block), empty transactions array
     const genesisBlock = new Block(0, '0', []);
 
-    // Mine the genesis block to establish initial proof-of-work
-    // This creates a valid hash that meets the difficulty requirement
-    genesisBlock.mineBlock(this.difficulty);
+    genesisBlock.hash = '0000000000000000000000000000000000000000000000000000000000000000';
+    genesisBlock.nonce = 0; // Genesis block nonce is 0
+    genesisBlock.timestamp = Date.now();
 
     // Add the mined genesis block to the blockchain
     this.blocks.push(genesisBlock);
@@ -114,9 +114,20 @@ export default class Blockchain {
 
     // Validate genesis block (first block in chain)
     const genesisBlock = this.blocks[0];
-    if (genesisBlock.hash !== genesisBlock.calculateHash()) {
-      console.log("Genesis block is not valid");
-      return false;
+    
+    // Special validation for all-zero genesis block
+    if (genesisBlock.blockNumber === 0) {
+      // Genesis block should have all-zero hash
+      if (genesisBlock.hash !== '0000000000000000000000000000000000000000000000000000000000000000') {
+        console.log("Genesis block hash is not all zeros");
+        return false;
+      }
+    } else {
+      // For other blocks, validate hash calculation
+      if (genesisBlock.hash !== genesisBlock.calculateHash()) {
+        console.log("Genesis block is not valid");
+        return false;
+      }
     }
 
     // Validate all subsequent blocks in the chain
