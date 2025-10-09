@@ -1,3 +1,0 @@
-This is a test file for blockchain mining.
-It contains some sample text that will be included in the block.
-The content will be hashed as part of the mining process.
